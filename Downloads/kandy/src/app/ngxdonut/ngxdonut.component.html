@@ -1,0 +1,17 @@
+<p>
+  ngxdonut works!
+</p>
+<ngx-charts-pie-chart
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="countryData"
+      [legend]="showLegend"
+      
+      [labels]="showLabels"
+      [doughnut]="true"
+      (select)="onSelect($event)"
+      [arcWidth]="0.3"
+      [legendTitle]="kandy"
+      [title]="title"
+      >
+    </ngx-charts-pie-chart>

@@ -1,0 +1,27 @@
+<p>
+    status-bar works!
+</p>
+<div *ngFor="let d of Data">
+    <div  aria-label="sa">
+        <div id={{d.ID}}_1 class="Flot" (click)="DivClicked(d.ID,'1')">
+            <div class="Success"></div>
+            <br>
+            <div class="FlotWidth" style="margin-top: -10px;padding-top: -1px">{{d.S}}%</div>
+        </div>
+
+        <div id={{d.ID}}_2 class="Flot" (click)="DivClicked(d.ID,'2')">
+            <div class="Warning"></div>
+            <br>
+            <div class="FlotWidth" style="margin-top: -10px;padding-top: -1px">{{d.W}}%</div>
+        </div>
+
+        <div id={{d.ID}}_3 class="Flot" (click)="DivClicked(d.ID,'3')">
+            <div class="Failed"></div>
+            <br>
+            <div class="FlotWidth" style="margin-top: -10px;padding-top: -1px">{{d.F}}%</div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>

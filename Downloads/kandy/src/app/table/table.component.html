@@ -1,0 +1,27 @@
+<p>
+    table works!
+</p>
+<table class="table table-bordered table-striped table-hover dataTable">
+    <tr>
+        <td attr.colspan ="{{ColumnCount}}">
+            <input type="text" placeholder="Search " class="form-control" [(ngModel)]='filter'>
+        </td>
+    </tr>
+    <th *ngFor="let c of Column">
+        <div (click)="sort(c)">
+            {{ c}}
+            <span class="glyphicon sort-icon" *ngIf="key ==c" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+        </div>
+    </th>
+    <tbody>
+        <tr *ngFor="let tableData of Data | orderBy: key : reverse | filter:filter| paginate: { itemsPerPage: 5, currentPage: p };">
+            <td *ngFor="let colName of Column"> {{tableData[colName]}}</td>
+        </tr>
+    </tbody>
+    <tr style="background-color: white">
+        <td attr.colspan ="{{ColumnCount}}">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </td>
+
+    </tr>
+</table>

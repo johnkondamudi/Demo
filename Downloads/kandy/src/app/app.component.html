@@ -1,0 +1,38 @@
+<div class="container" >
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Excelfore Cognito </a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/Home">Home Page</a></li>
+            <!-- <li routerLinkActive="active"><a  routerLink="/Home">Rest Call</a></li> -->
+            <li routerLinkActive="active"><a  *ngIf="!_auth.isLoggedIn()" routerLink="/register">register</a></li>
+            <li routerLinkActive="active"><a  *ngIf="!_auth.isLoggedIn()" routerLink="/resend">Resend Code</a></li>
+            <li  routerLinkActive="active"><a  *ngIf="!_auth.isLoggedIn()" routerLink="/login">Login</a></li>      
+            <li><a *ngIf="_auth.isLoggedIn()" href="javascript:void(0)" (click)="doLogout()">Logout</a></li>
+            <li><a *ngIf="_auth.isLoggedIn()"  routerLink="/ChangePassword">ChangePassword</a></li>
+            <li><a *ngIf="_auth.isLoggedIn()"  routerLink="/jwt">jwt</a></li>
+            <li><a *ngIf="!_auth.isLoggedIn()" routerLink="/forgot">forgot</a></li>
+            
+
+            
+            <li routerLinkActive="active"><a routerLink="/Table">D:Table</a></li>
+            <li routerLinkActive="active"><a routerLink="/CBar">Can:Bar</a></li>
+            <li routerLinkActive="active"><a routerLink="/CDon">Can:Don</a></li>
+            <li routerLinkActive="active"><a routerLink="/CLine">Can:Line</a></li>
+            <li routerLinkActive="active"><a routerLink="/StatusBar">StatusBar</a></li>
+            <li routerLinkActive="active"><a routerLink="/Control">Control</a></li>
+            <li routerLinkActive="active"><a routerLink="/ngxDonut">ngxDonut</a></li>
+            <li routerLinkActive="active"><a routerLink="/Api">ApiCall</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      
+    <router-outlet></router-outlet>
+    
+    <!-- <cm-overlay delay="300">
+        <span class="spinner"></span>&nbsp;&nbsp;&nbsp;Loading
+    </cm-overlay> -->
+    </div>
